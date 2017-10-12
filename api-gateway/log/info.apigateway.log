@@ -260,3 +260,126 @@
 2017-10-12 20:28:23,281 [Thread-8] INFO  o.s.c.s.DefaultLifecycleProcessor 358 - Stopping beans in phase 0
 2017-10-12 20:28:23,304 [Thread-8] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
 2017-10-12 20:28:23,304 [Thread-8] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-12 23:00:05,320 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext 583 - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3116c353: startup date [Thu Oct 12 23:00:05 CST 2017]; root of context hierarchy
+2017-10-12 23:00:05,703 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor 155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-12 23:00:05,819 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3887baef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-12 23:00:05,993 [main] INFO  o.h.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2017-10-12 23:00:06,499 [main] INFO  com.gzw.ApiGatewayApplicationTests 597 - The following profiles are active: test
+2017-10-12 23:00:06,506 [main] INFO  o.s.w.c.s.GenericWebApplicationContext 583 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@60cf80e7: startup date [Thu Oct 12 23:00:06 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3116c353
+2017-10-12 23:00:07,700 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate 165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-10-12 23:00:08,195 [main] INFO  o.s.cloud.context.scope.GenericScope 263 - BeanFactory id=59038e11-ddf3-3f54-a207-22675e217e25
+2017-10-12 23:00:08,291 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor 155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-12 23:00:08,552 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'org.springframework.cloud.netflix.metrics.MetricsInterceptorConfiguration$MetricsRestTemplateConfiguration' of type [org.springframework.cloud.netflix.metrics.MetricsInterceptorConfiguration$MetricsRestTemplateConfiguration$$EnhancerBySpringCGLIB$$4e9a5e33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-12 23:00:08,855 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3887baef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-12 23:00:09,762 [main] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-12 23:00:09,763 [main] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-12 23:00:09,787 [main] INFO  c.n.config.DynamicPropertyFactory 281 - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@b950f82
+2017-10-12 23:00:11,910 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@60cf80e7: startup date [Thu Oct 12 23:00:06 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3116c353
+2017-10-12 23:00:12,166 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-10-12 23:00:12,167 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-12 23:00:12,283 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-12 23:00:12,284 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-12 23:00:12,327 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 273 - Detected @ExceptionHandler methods in defaultExceptionHandlerAdvice
+2017-10-12 23:00:12,409 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-12 23:00:13,682 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2017-10-12 23:00:13,684 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-10-12 23:00:13,685 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,686 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,688 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-10-12 23:00:13,688 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,690 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/routes || /routes.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.netflix.zuul.RoutesMvcEndpoint.reset()
+2017-10-12 23:00:13,690 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/routes || /routes.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,692 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,694 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2017-10-12 23:00:13,696 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/service-registry/instance-status],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.cloud.client.serviceregistry.endpoint.ServiceRegistryEndpoint.setStatus(java.lang.String)
+2017-10-12 23:00:13,697 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/service-registry/instance-status],methods=[GET]}" onto public org.springframework.http.ResponseEntity org.springframework.cloud.client.serviceregistry.endpoint.ServiceRegistryEndpoint.getStatus()
+2017-10-12 23:00:13,705 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2017-10-12 23:00:13,706 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2017-10-12 23:00:13,707 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,709 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,711 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2017-10-12 23:00:13,711 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2017-10-12 23:00:13,712 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/hystrix.stream/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.cloud.netflix.endpoint.ServletWrappingEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-10-12 23:00:13,716 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-10-12 23:00:13,717 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-10-12 23:00:13,722 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-10-12 23:00:13,723 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,725 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2017-10-12 23:00:13,734 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-10-12 23:00:13,740 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,743 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,750 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,753 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:13,756 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping 543 - Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-12 23:00:14,311 [main] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-12 23:00:14,312 [main] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-12 23:00:14,685 [main] INFO  o.s.c.s.DefaultLifecycleProcessor 343 - Starting beans in phase 0
+2017-10-12 23:00:14,685 [main] INFO  o.s.c.s.DefaultLifecycleProcessor 343 - Starting beans in phase 2147483647
+2017-10-12 23:00:14,692 [main] INFO  o.s.c.n.h.HystrixCircuitBreakerConfiguration$HystrixMetricsPollerConfiguration 138 - Starting poller
+2017-10-12 23:00:14,764 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory 70 - Setting initial instance status as: STARTING
+2017-10-12 23:00:14,869 [main] INFO  c.netflix.discovery.DiscoveryClient 344 - Initializing Eureka in region us-east-1
+2017-10-12 23:00:15,057 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 70 - Using JSON encoding codec LegacyJacksonJson
+2017-10-12 23:00:15,058 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 71 - Using JSON decoding codec LegacyJacksonJson
+2017-10-12 23:00:15,289 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 80 - Using XML encoding codec XStreamXml
+2017-10-12 23:00:15,289 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 81 - Using XML decoding codec XStreamXml
+2017-10-12 23:00:15,663 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-12 23:00:15,696 [main] INFO  c.netflix.discovery.DiscoveryClient 920 - Disable delta property : false
+2017-10-12 23:00:15,698 [main] INFO  c.netflix.discovery.DiscoveryClient 921 - Single vip registry refresh property : null
+2017-10-12 23:00:15,699 [main] INFO  c.netflix.discovery.DiscoveryClient 922 - Force full registry fetch : false
+2017-10-12 23:00:15,699 [main] INFO  c.netflix.discovery.DiscoveryClient 923 - Application is null : false
+2017-10-12 23:00:15,700 [main] INFO  c.netflix.discovery.DiscoveryClient 924 - Registered Applications size is zero : true
+2017-10-12 23:00:15,701 [main] INFO  c.netflix.discovery.DiscoveryClient 926 - Application version is -1: true
+2017-10-12 23:00:15,702 [main] INFO  c.netflix.discovery.DiscoveryClient 1009 - Getting all instance registry info from the eureka server
+2017-10-12 23:00:15,859 [main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient 129 - Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2017-10-12 23:00:15,864 [main] WARN  c.netflix.discovery.DiscoveryClient 287 - Using default backup registry implementation which does not do anything.
+2017-10-12 23:00:15,867 [main] INFO  c.netflix.discovery.DiscoveryClient 1244 - Starting heartbeat executor: renew interval is: 30
+2017-10-12 23:00:15,871 [main] INFO  c.n.discovery.InstanceInfoReplicator 59 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2017-10-12 23:00:15,874 [main] INFO  c.netflix.discovery.DiscoveryClient 425 - Discovery Client initialized at timestamp 1507820415874 with initial instances count: 0
+2017-10-12 23:00:16,001 [main] INFO  com.gzw.ApiGatewayApplicationTests 57 - Started ApiGatewayApplicationTests in 11.42 seconds (JVM running for 12.683)
+2017-10-12 23:00:16,115 [Thread-8] INFO  o.s.w.c.s.GenericWebApplicationContext 984 - Closing org.springframework.web.context.support.GenericWebApplicationContext@60cf80e7: startup date [Thu Oct 12 23:00:06 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3116c353
+2017-10-12 23:00:16,118 [Thread-8] INFO  o.s.c.n.e.s.EurekaServiceRegistry 64 - Unregistering application api-gateway with eureka with status DOWN
+2017-10-12 23:00:16,120 [Thread-8] WARN  c.netflix.discovery.DiscoveryClient 1277 - Saw local status change event StatusChangeEvent [timestamp=1507820416120, current=DOWN, previous=STARTING]
+2017-10-12 23:00:16,122 [Thread-8] INFO  c.netflix.discovery.DiscoveryClient 852 - Shutting down DiscoveryClient ...
+2017-10-12 23:00:16,122 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient 795 - DiscoveryClient_API-GATEWAY/192.168.11.105:api-gateway:-1: registering service...
+2017-10-12 23:00:16,122 [Thread-8] INFO  c.netflix.discovery.DiscoveryClient 884 - Unregistering ...
+2017-10-12 23:00:16,133 [Thread-8] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient 129 - Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2017-10-12 23:00:16,139 [DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient 129 - Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2017-10-12 23:00:16,140 [DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient 800 - DiscoveryClient_API-GATEWAY/192.168.11.105:api-gateway:-1 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:798)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:104)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-10-12 23:00:16,140 [DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.discovery.InstanceInfoReplicator 108 - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:798)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:104)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-10-12 23:00:16,157 [Thread-8] INFO  c.netflix.discovery.DiscoveryClient 873 - Completed shut down of DiscoveryClient
+2017-10-12 23:00:16,159 [Thread-8] INFO  o.s.c.s.DefaultLifecycleProcessor 358 - Stopping beans in phase 2147483647
+2017-10-12 23:00:16,161 [Thread-8] INFO  o.s.c.s.DefaultLifecycleProcessor 358 - Stopping beans in phase 0
+2017-10-12 23:00:16,208 [Thread-8] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-12 23:00:16,209 [Thread-8] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.

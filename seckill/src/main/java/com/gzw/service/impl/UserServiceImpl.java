@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
             return resultInfo;
         }
 
-        Token token = tokenService.create(user);
+        Token token = tokenService.create(tempUser);
         resultInfo = ResultInfo.getSuccessWithInfo(ResultCode.LOGIN_SUCCESS,token.getToken());
         return resultInfo;
 
