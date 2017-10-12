@@ -1,8 +1,8 @@
 package com.gzw;
 
-import com.gzw.filter.IpFilter;
+import com.gzw.filter.RequestFilter;
+import com.gzw.filter.LoginFilter;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,12 @@ public class ApiGatewayApplication {
 	}
 
 	@Bean
-	public IpFilter ipFilter(){
-		return new IpFilter();
+	public RequestFilter ipFilter(){
+		return new RequestFilter();
+	}
+
+	@Bean
+	public LoginFilter loginFilter(){
+		return new LoginFilter();
 	}
 }
