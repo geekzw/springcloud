@@ -1,0 +1,100 @@
+2017-10-13 14:28:57,586 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext 583 - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3911c2a7: startup date [Fri Oct 13 14:28:57 CST 2017]; root of context hierarchy
+2017-10-13 14:28:58,011 [background-preinit] INFO  o.h.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2017-10-13 14:28:58,146 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor 155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-13 14:28:58,347 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$477f3d22] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-13 14:28:58,905 [main] INFO  com.gzw.ServerOneApplication 593 - No active profile set, falling back to default profiles: default
+2017-10-13 14:28:58,946 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7a1a14a4: startup date [Fri Oct 13 14:28:58 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3911c2a7
+2017-10-13 14:28:59,839 [main] INFO  o.s.cloud.context.scope.GenericScope 263 - BeanFactory id=a4ed0906-bec4-3a15-bd90-80f94bd5c0e8
+2017-10-13 14:28:59,857 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor 155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-13 14:28:59,909 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$477f3d22] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-13 14:29:00,246 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer 89 - Tomcat initialized with port(s): 8090 (http)
+2017-10-13 14:29:00,258 [main] INFO  o.a.catalina.core.StandardService 179 - Starting service [Tomcat]
+2017-10-13 14:29:00,259 [main] INFO  o.a.catalina.core.StandardEngine 179 - Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-13 14:29:00,371 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 179 - Initializing Spring embedded WebApplicationContext
+2017-10-13 14:29:00,372 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader 276 - Root WebApplicationContext: initialization completed in 1426 ms
+2017-10-13 14:29:00,541 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean 190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-10-13 14:29:00,546 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-13 14:29:00,546 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-10-13 14:29:00,547 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-10-13 14:29:00,547 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean 258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-13 14:29:01,000 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7a1a14a4: startup date [Fri Oct 13 14:28:58 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3911c2a7
+2017-10-13 14:29:01,054 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/pay],methods=[POST]}" onto public com.gzw.dto.ResultInfo com.gzw.controller.PayController.pay(com.gzw.dto.PayRequest)
+2017-10-13 14:29:01,057 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-10-13 14:29:01,058 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 14:29:01,083 [main] INFO  o.s.w.s.h.BeanNameUrlHandlerMapping 362 - Mapped URL path [/user] onto handler '/user'
+2017-10-13 14:29:01,094 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-13 14:29:01,094 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-13 14:29:01,128 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-13 14:29:01,500 [main] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-13 14:29:01,501 [main] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-13 14:29:01,505 [main] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-13 14:29:01,506 [main] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-13 14:29:01,579 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 431 - Registering beans for JMX exposure on startup
+2017-10-13 14:29:01,590 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 916 - Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-10-13 14:29:01,592 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 916 - Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-10-13 14:29:01,594 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 916 - Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-10-13 14:29:01,596 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 678 - Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-10-13 14:29:01,611 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 678 - Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-10-13 14:29:01,623 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter 678 - Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=7a1a14a4,type=ConfigurationPropertiesRebinder]
+2017-10-13 14:29:01,738 [main] INFO  o.s.c.s.DefaultLifecycleProcessor 343 - Starting beans in phase 0
+2017-10-13 14:29:01,745 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory 70 - Setting initial instance status as: STARTING
+2017-10-13 14:29:01,822 [main] INFO  c.netflix.discovery.DiscoveryClient 344 - Initializing Eureka in region us-east-1
+2017-10-13 14:29:02,121 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 70 - Using JSON encoding codec LegacyJacksonJson
+2017-10-13 14:29:02,121 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 71 - Using JSON decoding codec LegacyJacksonJson
+2017-10-13 14:29:02,239 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 80 - Using XML encoding codec XStreamXml
+2017-10-13 14:29:02,240 [main] INFO  c.n.d.p.DiscoveryJerseyProvider 81 - Using XML decoding codec XStreamXml
+2017-10-13 14:29:02,458 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 14:29:02,472 [main] INFO  c.netflix.discovery.DiscoveryClient 920 - Disable delta property : false
+2017-10-13 14:29:02,473 [main] INFO  c.netflix.discovery.DiscoveryClient 921 - Single vip registry refresh property : null
+2017-10-13 14:29:02,473 [main] INFO  c.netflix.discovery.DiscoveryClient 922 - Force full registry fetch : false
+2017-10-13 14:29:02,473 [main] INFO  c.netflix.discovery.DiscoveryClient 923 - Application is null : false
+2017-10-13 14:29:02,473 [main] INFO  c.netflix.discovery.DiscoveryClient 924 - Registered Applications size is zero : true
+2017-10-13 14:29:02,474 [main] INFO  c.netflix.discovery.DiscoveryClient 926 - Application version is -1: true
+2017-10-13 14:29:02,474 [main] INFO  c.netflix.discovery.DiscoveryClient 1009 - Getting all instance registry info from the eureka server
+2017-10-13 14:29:02,778 [main] INFO  c.netflix.discovery.DiscoveryClient 1018 - The response status is 200
+2017-10-13 14:29:02,780 [main] INFO  c.netflix.discovery.DiscoveryClient 1244 - Starting heartbeat executor: renew interval is: 30
+2017-10-13 14:29:02,785 [main] INFO  c.n.discovery.InstanceInfoReplicator 59 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2017-10-13 14:29:02,794 [main] INFO  c.netflix.discovery.DiscoveryClient 425 - Discovery Client initialized at timestamp 1507876142793 with initial instances count: 2
+2017-10-13 14:29:02,839 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry 40 - Registering application server-one with eureka with status UP
+2017-10-13 14:29:02,840 [main] INFO  c.netflix.discovery.DiscoveryClient 1279 - Saw local status change event StatusChangeEvent [timestamp=1507876142840, current=UP, previous=STARTING]
+2017-10-13 14:29:02,842 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient 795 - DiscoveryClient_SERVER-ONE/172.21.1.205:server-one:8090: registering service...
+2017-10-13 14:29:02,863 [main] INFO  o.a.coyote.http11.Http11NioProtocol 179 - Initializing ProtocolHandler ["http-nio-8090"]
+2017-10-13 14:29:02,885 [main] INFO  o.a.coyote.http11.Http11NioProtocol 179 - Starting ProtocolHandler ["http-nio-8090"]
+2017-10-13 14:29:02,899 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient 804 - DiscoveryClient_SERVER-ONE/172.21.1.205:server-one:8090 - registration status: 204
+2017-10-13 14:29:02,907 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 179 - Using a shared selector for servlet write/read
+2017-10-13 14:29:02,925 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer 201 - Tomcat started on port(s): 8090 (http)
+2017-10-13 14:29:02,926 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration 117 - Updating port to 8090
+2017-10-13 14:29:02,930 [main] INFO  com.gzw.ServerOneApplication 57 - Started ServerOneApplication in 6.128 seconds (JVM running for 6.854)
+2017-10-13 14:31:34,038 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-10-13 14:31:34,040 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet 489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-10-13 14:31:34,054 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet 508 - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2017-10-13 14:34:02,490 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 14:39:02,505 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 14:44:02,520 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 14:49:02,535 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 14:54:02,551 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 14:59:02,562 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:04:02,576 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:09:02,591 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:14:02,605 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:19:02,620 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:24:02,637 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:29:02,652 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:34:02,667 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:39:02,682 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:44:02,695 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:49:02,709 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:54:02,724 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:59:02,738 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:04:02,753 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:09:02,765 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:14:02,778 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:19:02,793 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:24:02,806 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:29:02,822 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:34:02,835 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:39:02,849 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:44:02,862 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:49:02,875 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:54:02,891 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 16:59:02,905 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration

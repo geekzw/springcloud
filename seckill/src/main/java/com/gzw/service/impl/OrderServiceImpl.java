@@ -5,9 +5,11 @@ import com.gzw.daomain.ResultInfo;
 import com.gzw.daomain.SecKill;
 import com.gzw.daomain.Token;
 import com.gzw.daomain.enums.OrderStatus;
+import com.gzw.dto.PayRequest;
 import com.gzw.mapper.OrderMapper;
 import com.gzw.mapper.SecKillMapper;
 import com.gzw.service.OrderService;
+import com.gzw.service.PayServiceR;
 import com.gzw.service.RedisService;
 import com.gzw.service.RedisTokenService;
 import com.gzw.utils.DateUtil;
@@ -37,6 +39,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     RedisService redisService;
+
+    @Autowired
+    PayServiceR payServiceR;
 
 
     @Override
@@ -143,6 +148,36 @@ public class OrderServiceImpl implements OrderService {
             resultInfo = ResultInfo.getErrorMessage("订单状态更新失败");
         }
 
+        return resultInfo;
+    }
+
+    @Override
+    public ResultInfo pay(String orderNo) {
+        ResultInfo resultInfo = findByOrderNo(orderNo);
+
+        if(!resultInfo.isSuccess()){
+            return resultInfo;
+        }
+
+        Order order = (Order) resultInfo.getData();
+
+        if(order.getSecStatus().intValue() > OrderStatus.WAITE_PAY.getCode()){
+            resultInfo = ResultInfo.getErrorMessage("订单已支付，请不要重复支付");
+            return resultInfo;
+        }else if(order.getSecStatus().intValue() == OrderStatus.INVALID.getCode()){
+            resultInfo = ResultInfo.getErrorMessage("订单异常，无法支付");
+            return resultInfo;
+        }
+
+        PayRequest request = new PayRequest(order.getOrderNo(),order.getComPrice());
+        com.gzw.dto.ResultInfo resultInfo1 = payServiceR.pay(request);
+        if(resultInfo1.getCode() == 1){
+            resultInfo = ResultInfo.getSuccessInfo(resultInfo1.getDes());
+            updateStatus(orderNo, OrderStatus.DELIVERY);
+        }else{
+            log.error(resultInfo1.getDes());
+            resultInfo = ResultInfo.getErrorMessage(resultInfo1.getDes());
+        }
         return resultInfo;
     }
 

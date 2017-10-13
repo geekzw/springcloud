@@ -1,0 +1,44 @@
+
+#注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/
+
+server:
+    port: 8888
+spring:
+  #项目基本配置
+  application:
+      name: api-gateway
+
+  #redis配置
+  redis:
+    database: 0
+    host: localhost
+    port: 32769
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: -1
+      max-total: 100
+      block-when-exhausted: true
+
+#zull超时配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 10000
+
+ribbon:
+#  ribbon重试超时时间
+  ConnectTimeout: 15000
+#  建立连接后的超时时间
+  ReadTimeout: 10000
+  eureka:
+      enable: true

@@ -31,7 +31,11 @@ public class UserController {
 
     @PostMapping(value = "/do_login")
     public String login(User user){
-
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ResultInfo resultInfo = userService.login(user);
 
         return resultInfo.getString(resultInfo);

@@ -1,0 +1,10 @@
+#注册中心配置
+spring:
+  application:
+    name: pay
+server:
+  port: 8090
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/

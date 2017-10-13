@@ -8,8 +8,10 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 
 /**
  * Created by gujian on 2017/9/30.
@@ -44,6 +46,7 @@ public class RequestFilter extends ZuulFilter{
 
     private void check() {
         RequestContext ctx = RequestContext.getCurrentContext();
+
         HttpServletRequest request = ctx.getRequest();
         String temp_ip = request.getRemoteAddr();
         long curTime = System.currentTimeMillis();

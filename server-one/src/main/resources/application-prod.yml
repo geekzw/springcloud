@@ -1,0 +1,10 @@
+#注册中心配置
+spring:
+  application:
+    name: server-one
+server:
+  port: 8090
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.115.151:8088/eureka/

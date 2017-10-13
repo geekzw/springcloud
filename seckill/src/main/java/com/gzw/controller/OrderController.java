@@ -6,6 +6,7 @@ import com.gzw.daomain.enums.OrderStatus;
 import com.gzw.dto.PayRequest;
 import com.gzw.service.OrderService;
 import com.gzw.service.PayServiceR;
+import com.sun.org.apache.regexp.internal.RE;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +25,6 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
-    @Autowired
-    PayServiceR payServiceR;
 
     @PostMapping(value = "/getOrderByOrderNo")
     public String getOrderByOrderNo(@RequestParam("orderNo") String orderNo){
@@ -56,23 +55,8 @@ public class OrderController {
     @PostMapping(value = "/pay")
     public String pay(@RequestParam("orderNo") String orderNo){
 
-        ResultInfo resultInfo = orderService.findByOrderNo(orderNo);
+        ResultInfo resultInfo = orderService.pay(orderNo);
 
-        if(!resultInfo.isSuccess()){
-            return ResultInfo.getString(resultInfo);
-        }
-
-        Order order = (Order) resultInfo.getData();
-
-        PayRequest request = new PayRequest(order.getOrderNo(),order.getComPrice());
-        com.gzw.dto.ResultInfo resultInfo1 = payServiceR.pay(request);
-        if(resultInfo1.getCode() == 1){
-            resultInfo = ResultInfo.getSuccessInfo(resultInfo1.getDes());
-            orderService.updateStatus(orderNo, OrderStatus.DELIVERY);
-        }else{
-            log.error(resultInfo1.getDes());
-            resultInfo = ResultInfo.getErrorMessage(resultInfo1.getDes());
-        }
         return ResultInfo.getString(resultInfo);
     }
 }

@@ -20,4 +20,6 @@ public interface OrderService {
 
     ResultInfo updateStatus(String orderNo,OrderStatus orderStatus);
 
+    ResultInfo pay(String order);
+
 }

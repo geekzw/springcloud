@@ -4,7 +4,7 @@
 <!--debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。-->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-    <contextName>center</contextName>
+    <contextName>pay</contextName>
 
     <!-- 彩色日志 -->
     <!-- 彩色日志依赖的渲染类 -->
@@ -18,7 +18,7 @@
 
 
     <property name="logback.log_dir" value="./log"/>
-    <property name="logback.app_name" value="center"/>
+    <property name="logback.app_name" value="pay"/>
 
     <!--输出到控制台-->
     <appender name="consoleLog1" class="ch.qos.logback.core.ConsoleAppender">
@@ -28,7 +28,7 @@
             <charset>utf8</charset>
         </encoder>
         <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
-            <!--<level>INFO</level>-->
+        <!--<level>INFO</level>-->
         <!--</filter>-->
     </appender>
 

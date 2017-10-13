@@ -1,0 +1,48 @@
+2017-10-13 15:18:27,994 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext 583 - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@626abbd0: startup date [Fri Oct 13 15:18:27 CST 2017]; root of context hierarchy
+2017-10-13 15:18:28,376 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor 155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-13 15:18:28,478 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5e86d47e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-13 15:18:28,654 [main] INFO  o.h.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2017-10-13 15:18:29,262 [main] INFO  com.gzw.ServerOneApplicationTests 593 - No active profile set, falling back to default profiles: default
+2017-10-13 15:18:29,285 [main] INFO  o.s.w.c.s.GenericWebApplicationContext 583 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@55795845: startup date [Fri Oct 13 15:18:29 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@626abbd0
+2017-10-13 15:18:30,354 [main] INFO  o.s.cloud.context.scope.GenericScope 263 - BeanFactory id=e778227b-2632-3ded-a43d-45b27b23f058
+2017-10-13 15:18:30,467 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor 155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-13 15:18:30,582 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5e86d47e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-10-13 15:18:31,580 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@55795845: startup date [Fri Oct 13 15:18:29 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@626abbd0
+2017-10-13 15:18:31,753 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/pay],methods=[POST]}" onto public com.gzw.dto.ResultInfo com.gzw.controller.PayController.pay(com.gzw.dto.PayRequest)
+2017-10-13 15:18:31,759 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-10-13 15:18:31,760 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:18:31,805 [main] INFO  o.s.w.s.h.BeanNameUrlHandlerMapping 362 - Mapped URL path [/user] onto handler '/user'
+2017-10-13 15:18:31,866 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-13 15:18:31,867 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-13 15:18:32,015 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-13 15:18:32,547 [main] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-13 15:18:32,547 [main] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-13 15:18:32,563 [main] WARN  c.n.c.sources.URLConfigurationSource 121 - No URLs will be polled as dynamic configuration sources.
+2017-10-13 15:18:32,564 [main] INFO  c.n.c.sources.URLConfigurationSource 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-10-13 15:18:32,922 [main] INFO  o.s.c.s.DefaultLifecycleProcessor 343 - Starting beans in phase 0
+2017-10-13 15:18:32,942 [main] INFO  com.gzw.ServerOneApplicationTests 57 - Started ServerOneApplicationTests in 5.897 seconds (JVM running for 7.562)
+2017-10-13 15:18:33,099 [Thread-5] INFO  o.s.w.c.s.GenericWebApplicationContext 984 - Closing org.springframework.web.context.support.GenericWebApplicationContext@55795845: startup date [Fri Oct 13 15:18:29 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@626abbd0
+2017-10-13 15:18:33,117 [Thread-5] INFO  o.s.c.n.eureka.InstanceInfoFactory 70 - Setting initial instance status as: STARTING
+2017-10-13 15:18:33,132 [Thread-5] INFO  o.s.c.n.e.s.EurekaServiceRegistry 64 - Unregistering application server-one with eureka with status DOWN
+2017-10-13 15:18:33,236 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 344 - Initializing Eureka in region us-east-1
+2017-10-13 15:18:33,634 [Thread-5] INFO  c.n.d.p.DiscoveryJerseyProvider 70 - Using JSON encoding codec LegacyJacksonJson
+2017-10-13 15:18:33,635 [Thread-5] INFO  c.n.d.p.DiscoveryJerseyProvider 71 - Using JSON decoding codec LegacyJacksonJson
+2017-10-13 15:18:33,987 [Thread-5] INFO  c.n.d.p.DiscoveryJerseyProvider 80 - Using XML encoding codec XStreamXml
+2017-10-13 15:18:33,988 [Thread-5] INFO  c.n.d.p.DiscoveryJerseyProvider 81 - Using XML decoding codec XStreamXml
+2017-10-13 15:18:34,287 [Thread-5] INFO  c.n.d.s.r.aws.ConfigClusterResolver 43 - Resolving eureka endpoints via configuration
+2017-10-13 15:18:34,330 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 920 - Disable delta property : false
+2017-10-13 15:18:34,331 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 921 - Single vip registry refresh property : null
+2017-10-13 15:18:34,332 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 922 - Force full registry fetch : false
+2017-10-13 15:18:34,332 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 923 - Application is null : false
+2017-10-13 15:18:34,333 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 924 - Registered Applications size is zero : true
+2017-10-13 15:18:34,333 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 926 - Application version is -1: true
+2017-10-13 15:18:34,334 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 1009 - Getting all instance registry info from the eureka server
+2017-10-13 15:18:34,705 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 1018 - The response status is 200
+2017-10-13 15:18:34,708 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 1244 - Starting heartbeat executor: renew interval is: 30
+2017-10-13 15:18:34,712 [Thread-5] INFO  c.n.discovery.InstanceInfoReplicator 59 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2017-10-13 15:18:34,717 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 425 - Discovery Client initialized at timestamp 1507879114717 with initial instances count: 3
+2017-10-13 15:18:34,771 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 852 - Shutting down DiscoveryClient ...
+2017-10-13 15:18:34,777 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 884 - Unregistering ...
+2017-10-13 15:18:34,805 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 886 - DiscoveryClient_SERVER-ONE/172.21.1.205:server-one:-1 - deregister  status: 404
+2017-10-13 15:18:34,822 [Thread-5] INFO  c.netflix.discovery.DiscoveryClient 873 - Completed shut down of DiscoveryClient
+2017-10-13 15:18:34,824 [Thread-5] INFO  o.s.c.s.DefaultLifecycleProcessor 358 - Stopping beans in phase 0
