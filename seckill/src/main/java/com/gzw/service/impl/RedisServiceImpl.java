@@ -63,4 +63,12 @@ public class RedisServiceImpl implements RedisService {
         jedis.close();
         return index;
     }
+
+    @Override
+    public Long incr(String key) {
+        Jedis jedis = jedisPool.getResource();
+        Long index = jedis.incr(key);
+        jedis.close();
+        return index;
+    }
 }

@@ -1,9 +1,6 @@
 package com.gzw.service.impl;
 
-import com.gzw.daomain.Order;
-import com.gzw.daomain.ResultInfo;
-import com.gzw.daomain.SecKill;
-import com.gzw.daomain.Token;
+import com.gzw.daomain.*;
 import com.gzw.daomain.enums.OrderStatus;
 import com.gzw.dto.PayRequest;
 import com.gzw.mapper.OrderMapper;
@@ -15,12 +12,17 @@ import com.gzw.service.RedisTokenService;
 import com.gzw.utils.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.async.DeferredResult;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 /**
@@ -43,6 +45,13 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     PayServiceR payServiceR;
 
+    private ConcurrentLinkedDeque<OrderRequest> catchDeferredResults = new ConcurrentLinkedDeque<>();
+    private ConcurrentLinkedDeque<OrderRequest> runningDeferredResults = new ConcurrentLinkedDeque<>();
+
+    ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+    private boolean isScan = false;
+
 
     @Override
     @Transactional
@@ -64,19 +73,6 @@ public class OrderServiceImpl implements OrderService {
             redisService.setStringValue(keyComCount,secKill.getStorageCount()+"");
         }
 
-        if(secKill.getStorageCount().intValue()<=0){
-            log.error("库存不足");
-            resultInfo = ResultInfo.getErrorMessage("库存不足");
-            return resultInfo;
-        }
-
-        if(secKill.getEndTime().compareTo(date) < 0){
-            log.error("秒杀已结束");
-            resultInfo = ResultInfo.getErrorMessage("秒杀已结束");
-            return resultInfo;
-        }
-
-        redisService.decr(keyComCount);
         order.setComPrice(secKill.getComPrice());
 
 
@@ -181,6 +177,104 @@ public class OrderServiceImpl implements OrderService {
         return resultInfo;
     }
 
+    @Override
+    public void addToQueue(OrderRequest orderRequest) {
+
+        String date = DateUtil.getFormatDate(new Date(System.currentTimeMillis()));
+        String keyComObj = "seckill:"+orderRequest.getComId();
+        String keyComCount = "count:"+orderRequest.getComId();
+        ResultInfo resultInfo;
+
+        SecKill secKill = redisService.getObjectValue(keyComObj,SecKill.class);
+        if(secKill == null){
+            secKill = secKillMapper.getSecKillById(orderRequest.getComId());
+            if(secKill == null){
+                log.error("数据异常");
+                resultInfo = ResultInfo.getErrorMessage("数据异常");
+                orderRequest.getResult().setResult(ResultInfo.getString(resultInfo));
+                return;
+            }
+            redisService.setObjectValue(keyComObj,secKill);
+            redisService.setStringValue(keyComCount,secKill.getStorageCount()+"");
+        }
+
+        if(secKill.getStorageCount().intValue() == -1){
+            log.error("库存不足");
+            resultInfo = ResultInfo.getErrorMessage("库存不足");
+            orderRequest.getResult().setResult(ResultInfo.getString(resultInfo));
+            return;
+        }
+
+        if(secKill.getStorageCount().intValue()<=0){
+
+            secKill = secKillMapper.getSecKillById(orderRequest.getComId());
+            int count = secKill.getStorageCount();
+            if(count<=0){
+                log.error("库存不足");
+                resultInfo = ResultInfo.getErrorMessage("库存不足");
+                orderRequest.getResult().setResult(ResultInfo.getString(resultInfo));
+                redisService.setStringValue(keyComCount,-1+"");
+                return;
+
+            }else{
+                redisService.setObjectValue(keyComObj,secKill);
+                redisService.setStringValue(keyComCount,secKill.getStorageCount()+"");
+            }
+
+        }
+
+        if(secKill.getEndTime().compareTo(date) < 0){
+            log.error("秒杀已结束");
+            resultInfo = ResultInfo.getErrorMessage("秒杀已结束");
+            orderRequest.getResult().setResult(ResultInfo.getString(resultInfo));
+            return;
+        }
+
+        redisService.decr(keyComCount);
+
+        if(catchDeferredResults == null){
+            catchDeferredResults = new ConcurrentLinkedDeque<>();
+        }
+
+
+        catchDeferredResults.add(orderRequest);
+        orderRequest.getResult().onCompletion(()->{
+            log.info("异步调用完成");
+            runningDeferredResults.remove(orderRequest);
+        });
+        orderRequest.getResult().onTimeout(()->{
+            log.error("生成订单超时");
+            runningDeferredResults.remove(orderRequest);
+            redisService.incr(keyComCount);
+        });
+    }
+
+    @Scheduled(fixedRate = 200)
+    protected void scanCatchRequest(){
+        if(!isScan){
+            executRequest();
+        }
+
+    }
+
+    private void executRequest(){
+        isScan = true;
+        if(runningDeferredResults == null){
+            runningDeferredResults = new ConcurrentLinkedDeque<>();
+        }
+        for(int i=0;i<catchDeferredResults.size();i++){
+            if(runningDeferredResults.size()>=20){
+                break;
+            }
+            log.info("请求添加到线程池");
+            OrderRequest request = catchDeferredResults.getFirst();
+            executorService.execute(new OrderThread(request.getComId(),request.getRequest(),request.getResult()));
+            runningDeferredResults.add(request);
+            catchDeferredResults.remove(request);
+        }
+        isScan = false;
+    }
+
     private String getOrderNo(){
 
         Random random = new Random(9000000);
@@ -188,4 +282,24 @@ public class OrderServiceImpl implements OrderService {
         return xx+System.currentTimeMillis()+"";
 
     }
+
+    private class OrderThread implements Runnable{
+
+        private Integer comId;
+        private HttpServletRequest request;
+        private DeferredResult<String> result;
+
+        public OrderThread(Integer comId, HttpServletRequest request,DeferredResult<String> result) {
+            this.comId = comId;
+            this.request = request;
+            this.result = result;
+        }
+
+        @Override
+        public void run() {
+            ResultInfo resultInfo = addOrder(comId,request);
+            result.setResult(ResultInfo.getString(resultInfo));
+        }
+    }
+
 }

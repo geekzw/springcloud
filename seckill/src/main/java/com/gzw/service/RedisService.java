@@ -16,4 +16,6 @@ public interface RedisService {
     void setTimeOut(String key, int second);
 
     Long decr(String key);
+
+    Long incr(String key);
 }

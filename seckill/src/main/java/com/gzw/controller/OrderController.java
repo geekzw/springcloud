@@ -1,6 +1,7 @@
 package com.gzw.controller;
 
 import com.gzw.daomain.Order;
+import com.gzw.daomain.OrderRequest;
 import com.gzw.daomain.ResultInfo;
 import com.gzw.daomain.enums.OrderStatus;
 import com.gzw.dto.PayRequest;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.async.DeferredResult;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -43,12 +45,13 @@ public class OrderController {
     }
 
     @PostMapping(value = "/kill")
-    public String kill(@RequestParam("id") Integer id, HttpServletRequest request){
-        ResultInfo resultInfo;
-
-        resultInfo = orderService.addOrder(id,request);
-
-        return ResultInfo.getString(resultInfo);
+    public DeferredResult<String> kill(@RequestParam("id") Integer id, HttpServletRequest request){
+        log.info("主线程接收请求");
+        DeferredResult<String> result = new DeferredResult<String>(3000L);
+        OrderRequest orderRequest = new OrderRequest(id,request,result);
+        orderService.addToQueue(orderRequest);
+        log.info("主线程返回");
+        return result;
 
     }
 
