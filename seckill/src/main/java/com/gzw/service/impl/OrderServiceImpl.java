@@ -2,13 +2,13 @@ package com.gzw.service.impl;
 
 import com.gzw.daomain.*;
 import com.gzw.daomain.enums.OrderStatus;
+import com.gzw.daomain.form.OrderRequest;
 import com.gzw.dto.PayRequest;
 import com.gzw.mapper.OrderMapper;
 import com.gzw.mapper.SecKillMapper;
 import com.gzw.service.OrderService;
 import com.gzw.service.PayServiceR;
 import com.gzw.service.RedisService;
-import com.gzw.service.RedisTokenService;
 import com.gzw.utils.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -126,9 +126,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public ResultInfo findByUserId(Integer userId) {
+    public ResultInfo findByUserId(HttpServletRequest request,Integer offset,Integer limit) {
+
+        Token token = redisService.getObjectValue(request.getHeader("token"),Token.class);
         ResultInfo resultInfo;
-        resultInfo = ResultInfo.getSuccessData(orderMapper.findByUserId(userId));
+        resultInfo = ResultInfo.getSuccessData(orderMapper.findByUserId(token.getUserId(),offset,limit));
         return resultInfo;
     }
 

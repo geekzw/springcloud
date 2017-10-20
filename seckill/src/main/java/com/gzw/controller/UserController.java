@@ -1,14 +1,11 @@
 package com.gzw.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.gzw.daomain.ResultInfo;
 import com.gzw.daomain.User;
 import com.gzw.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,26 +19,22 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping(value = "/do_register")
-    public String register(User user){
+    @PostMapping(value = "/users")
+    public String register(@RequestBody User user){
         ResultInfo resultInfo = userService.register(user);
 
         return resultInfo.getString(resultInfo);
     }
 
-    @PostMapping(value = "/do_login")
-    public String login(User user){
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    @PostMapping(value = "/token")
+    public String login(@RequestBody User user){
+
         ResultInfo resultInfo = userService.login(user);
 
         return resultInfo.getString(resultInfo);
     }
 
-    @GetMapping(value = "/user")
+    @GetMapping(value = "/users")
     public String getUserInfo(HttpServletRequest request){
         String token = request.getHeader("token");
         ResultInfo resultInfo = userService.getUser(token);

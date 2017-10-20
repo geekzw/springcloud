@@ -1,5 +1,6 @@
 package com.gzw.service.impl;
 
+import com.gzw.daomain.Constants;
 import com.gzw.daomain.ResultInfo;
 import com.gzw.daomain.SecKill;
 import com.gzw.mapper.SecKillMapper;
@@ -38,7 +39,6 @@ public class SecKillServiceImpl implements SecKillService {
     @Override
     public ResultInfo getSecKillList(int offset, int limit) {
         ResultInfo resultInfo;
-
         resultInfo = ResultInfo.getSuccessData(secKillMapper.getSecKills(offset,limit));
 
         return resultInfo;
@@ -48,7 +48,13 @@ public class SecKillServiceImpl implements SecKillService {
     public ResultInfo getSecKillById(Integer id) {
 
         ResultInfo resultInfo;
-        resultInfo = ResultInfo.getSuccessData(secKillMapper.getSecKillById(id));
+        SecKill secKill = secKillMapper.getSecKillById(id);
+        if(secKill == null){
+            resultInfo = ResultInfo.getSuccessInfo("没有这个数据");
+        }else{
+            resultInfo = ResultInfo.getSuccessData(secKill);
+        }
+
         return resultInfo;
     }
 

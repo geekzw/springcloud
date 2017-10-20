@@ -24,4 +24,5 @@ public class SecKill {
     private String startTime;
 
     private String endTime;
+
 }

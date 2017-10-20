@@ -13,7 +13,7 @@ import java.util.List;
 public interface SecKillMapper {
 
     @Insert("insert into t_seckill(com_name,com_price,storage_count,start_time,end_time)" +
-            " values(#{comName},#{price},#{storageCount},#{startTime},#{endTime})")
+            " values(#{comName},#{comPrice},#{storageCount},#{startTime},#{endTime})")
     int addSecKillCom(SecKill secKill);
 
     @Select("select * from t_seckill limit #{limit} offset #{offset}")

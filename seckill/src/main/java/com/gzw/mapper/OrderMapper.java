@@ -19,8 +19,8 @@ public interface OrderMapper {
     @Select("select * from t_order where order_no=#{orderNo}")
     Order findByOrderNo(@Param("orderNo") String orderNo);
 
-    @Select("select * from t_order where user_id=#{userId}")
-    List<Order> findByUserId(@Param("userId") Integer userId);
+    @Select("select * from t_order where user_id=#{userId} limit #{limit} offset #{offset}")
+    List<Order> findByUserId(@Param("userId") Integer userId,@Param("offset") Integer offset,@Param("limit") Integer limit);
 
     @Update("update t_order set sec_status=#{status} where order_no=#{orderNo}")
     int updateStatus(@Param("orderNo") String orderNo,@Param("status") Integer status);

@@ -1,38 +1,40 @@
 package com.gzw.controller;
 
+import com.gzw.daomain.Constants;
 import com.gzw.daomain.ResultInfo;
 import com.gzw.daomain.SecKill;
+import com.gzw.daomain.form.SecKillListCondition;
 import com.gzw.service.SecKillService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by gujian on 2017/10/11.
  */
 @RestController
+@RequestMapping(value = "/secKills")
 public class SecKillController {
 
     @Autowired
     SecKillService secKillService;
 
-    @PostMapping(value = "/addSeckill")
-    public String addSeckill(SecKill secKill){
+    @PostMapping
+    public String addSecKill(@RequestBody  SecKill secKill){
         ResultInfo resultInfo;
         resultInfo = secKillService.addSecKillCom(secKill);
         return resultInfo.getString(resultInfo);
     }
 
-    @PostMapping(value = "/getSeckill")
-    public String getSeckill(@RequestParam("id") Integer id){
+    @GetMapping(value = "/{id}")
+    public String getSecKill(@PathVariable("id") Integer id){
         ResultInfo resultInfo;
         resultInfo = secKillService.getSecKillById(id);
         return resultInfo.getString(resultInfo);
     }
 
-    @PostMapping(value = "/getSeckillList")
-    public String getSeckillList(@RequestParam("offset") Integer offset,@RequestParam("limit") Integer limit){
+    @GetMapping
+    public String getSecKillList(@RequestParam(value = "offset",defaultValue = "0") Integer offset,
+                                 @RequestParam(value = "limit",defaultValue = Constants.PAGE_LIMIT) Integer limit){
         ResultInfo resultInfo;
         resultInfo = secKillService.getSecKillList(offset,limit);
         return resultInfo.getString(resultInfo);
